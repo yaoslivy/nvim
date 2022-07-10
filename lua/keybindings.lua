@@ -52,6 +52,10 @@ map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opt)
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opt)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opt)
 
+
+
+
+
 local pluginKeys = {}
 
 -- lsp 回调函数快捷键设置

@@ -33,6 +33,7 @@
 | |打开/ 折叠 |zc/ zo |
 | LSP系列插件(插入状态)|跳转到定义 |gd |
 | |显示提示 | gh|
+| |注释 | gcc|
 | |自动补全跳转下一个/上一个 |control+j/ k |
 | |取消/显示自动补全 |control+ ,/ . |
 | | 取消当前行输入| control+u |
@@ -40,6 +41,8 @@
 | telescope插件|全局搜索文件名 |;+ff |
 | |搜索打开的bufferline |;+fb |
 | |搜索帮助命令 |;+fh |
+| toggleterm插件|启动/关闭第一个float term |control + \ |
+|        |启动/关闭第n个float term |  n + control + \ |
 | vim-go插件|启动go debug模式|:GoDebugStart |
 ||:GoDebugBreakpoint 光标所在行下断点| \<F9> |
 | |:GoDebugStep 逐行调试 | \<F10> |

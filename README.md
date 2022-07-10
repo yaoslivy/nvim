@@ -26,7 +26,8 @@
 | |创建文件/重命名文件 |a/ r |
 | |拷贝/ 剪切/ 粘贴/ 删除 |c/ x/ p/ d |
 | |显示/ 关闭隐藏文件 |H |
-|bufferline插件 |左右切换tab |control+hl |
+|bufferline插件 |左/右切换tab |control+h/l |
+| |关闭左/右边全部tab |dl/dr|
 | nvim-treesitter插件|增/减量选择 |enter/ backspace |
 | |格式化代码 |;+i |
 | |打开/ 折叠 |zc/ zo |
@@ -71,8 +72,8 @@
 |symbols-outline.nvim |[click](https://github.com/simrat39/symbols-outline.nvim) |
 |nvim-telescope/telescope.nvim |[click](https://github.com/nvim-telescope/telescope.nvim) |
 |akinsho/toggleterm.nvim |[click](https://github.com/akinsho/toggleterm.nvim) |
-|vimspector|[click](https://github.com/puremourning/vimspector#features-and-usage)|
 |kommentary|[click](https://github.com/b3nj5m1n/kommentary)
+|vim-go|[click](https://github.com/fatih/vim-go)
 
 
 

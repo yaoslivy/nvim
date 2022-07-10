@@ -51,8 +51,6 @@ return require('packer').startup(function()
   }
   -- 快速注释
   use 'b3nj5m1n/kommentary'
-  -- 代码调试
-  use "puremourning/vimspector"
 
   -- lspconfig
   use {

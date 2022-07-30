@@ -78,5 +78,37 @@
 |kommentary|[click](https://github.com/b3nj5m1n/kommentary)
 |vim-go|[click](https://github.com/fatih/vim-go)
 
+## 快速配置
+### CentOS7.6
+1. 安装neovim软件
+	1. [Release Nvim v0.7.2 · neovim/neovim · GitHub](https://github.com/neovim/neovim/releases/tag/v0.7.2)
+2. 安装node.js环境：
+	1. [下载 | Node.js 中文网](http://nodejs.cn/download/)
+3. cd ~/.config
+4. git clone https://github.com/yaoslivy/nvim.git
+5. 安装 Packer.nvim 插件管理器
+	1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+6. 输入：nvim，然后输入:PackerSync完成插件下载
+7. 需单独clone插件：
+	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
 
+报错解决：
+1. [centos7升级gcc 解决make时c99错误_Telda_W的博客-CSDN博客_makefile设置c99](https://blog.csdn.net/qq_23418145/article/details/121162908)
 
+### Mac
+1. 安装neovim软件：
+	1. brew install neovim
+2. 安装node.js环境：
+	1. brew install node
+3. cd ~/.config
+4. git clone https://github.com/yaoslivy/nvim.git
+5. 安装 Packer.nvim 插件管理器：
+	1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+6. 输入：nvim，然后输入:PackerSync完成插件下载
+7. 需单独clone插件：
+	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
+
+## 效果展示
+![](./img/example01.PNG)
+![](./img/example02.PNG)
+![](./img/example03.PNG)

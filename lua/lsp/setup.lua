@@ -1,3 +1,4 @@
+
 local lsp_installer = require "nvim-lsp-installer"
 
 -- 安装列表

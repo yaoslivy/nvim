@@ -29,6 +29,6 @@ lua require('lsp/nvim-cmp')
 lua require('plugin-config/lualine')
 lua require('plugin-config/nvim-autopairs')
 lua require('plugin-config/toggleterm')
-
+lua require('plugin-config/symbols-outline')
 
 

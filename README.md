@@ -21,6 +21,7 @@
 | |跳转到左下上右窗口中 |;+h/ j/ k/ l |
 | |插入模式下使用jk退到命令模式 |jk |
 | |快速移动到下一个字符之后输入 |jkla |
+||跳转函数定义/跳回|contron+]/ control+t|
 |nvim-tree插件 |打开/关闭目录树 |;+n |
 | |打开或关闭文件夹，打开文件 |o |
 | |预览文件 |tab |
@@ -31,7 +32,9 @@
 | |关闭左/右边全部tab |dl/dr|
 | nvim-treesitter|格式化代码 |;+i |
 | |打开/ 折叠 |zc/ zo |
-| LSP系列插件(插入状态)|跳转到定义 |gd |
+| LSP系列插件|跳转到定义 |gd |
+||跳转到继承处|gi|
+||跳转到相关处|gr|
 | |显示提示 | gh|
 | |注释 | gcc|
 | |自动补全跳转下一个/上一个 |control+j/ k |
@@ -48,7 +51,7 @@
 | |:GoDebugStep 逐行调试 | \<F10> |
 ||:GoDebugContinue 逐断点调试| \<F5> |
 ||结束debug模式| :GoDebugStop |
-
+|symbols-outline插件|在右边显示文档结构|:SymbolsOutline|
 
 
 ## 安装的插件:

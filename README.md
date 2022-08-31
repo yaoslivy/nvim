@@ -42,6 +42,7 @@
 | | 取消当前行输入| control+u |
 | | 同步修改名字|;+rn |
 | telescope插件|全局搜索文件名 |;+ff |
+||全局搜索字符串|;+fb|
 | |搜索打开的bufferline |;+fb |
 | |搜索帮助命令 |;+fh |
 | toggleterm插件|启动/关闭第一个float term |control + \ |
@@ -80,6 +81,7 @@
 |akinsho/toggleterm.nvim |[click](https://github.com/akinsho/toggleterm.nvim) |
 |kommentary|[click](https://github.com/b3nj5m1n/kommentary)
 |vim-go|[click](https://github.com/fatih/vim-go)
+|ripgrep|[click](https://github.com/BurntSushi/ripgrep#installation)|
 
 ## 快速配置
 ### CentOS7.6
@@ -92,6 +94,7 @@
 5. 输入：nvim，然后输入:PackerSync完成插件下载
 6. 需单独clone插件：
 	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
+    2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
 
 报错解决：
 1. [centos7升级gcc 解决make时c99错误_Telda_W的博客-CSDN博客_makefile设置c99](https://blog.csdn.net/qq_23418145/article/details/121162908)
@@ -106,6 +109,7 @@
 5. 输入：nvim，然后输入:PackerSync完成插件下载
 6. 需单独clone插件：
 	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
+    2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
 
 ## 效果展示
 ![](./img/example01.PNG)

@@ -48,7 +48,7 @@ map("n", "<leader>i", "gg=G", opt)
 
 -- telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opt)
---map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opt)
+map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opt)
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opt)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opt)
 

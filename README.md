@@ -3,6 +3,7 @@
 ## 已配置的环境：
 1. Go
 2. Lua
+3. Python
 3. Vue
 4. Markdown
 

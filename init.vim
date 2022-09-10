@@ -31,4 +31,6 @@ lua require('plugin-config/nvim-autopairs')
 lua require('plugin-config/toggleterm')
 lua require('plugin-config/symbols-outline')
 
-
+" vim-go配置
+" debug日志输出 不输出debugger rpc信息
+let g:go_debug_log_output = ''

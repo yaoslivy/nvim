@@ -34,7 +34,8 @@
 | |关闭左/右边全部tab |dl/dr|
 | nvim-treesitter|格式化代码 |;+i |
 | |打开/ 折叠 |zc/ zo |
-| LSP系列插件|跳转到定义 |gd |
+||打开、折叠当前括号对|za|
+| LSP系列插件|跳转到定义/返回 |gd / ctrl+o |
 ||跳转到继承处|gi|
 ||跳转到相关处|gr|
 | |显示提示 | gh|
@@ -50,11 +51,14 @@
 | |搜索帮助命令 |;+fh |
 | toggleterm插件|启动/关闭第一个float term |control + \ |
 |        |启动/关闭第n个float term |  n + control + \ |
-| vim-go插件|启动go debug模式|:GoDebugStart |
+| vim-go插件|启动go debug模式|:GoDebugStart  ;\<F5>|
 ||:GoDebugBreakpoint 光标所在行下断点| \<F9> |
 | |:GoDebugStep 逐行调试 | \<F10> |
 ||:GoDebugContinue 逐断点调试| \<F5> |
-||结束debug模式| :GoDebugStop |
+||:GoDebugStep 跳入函数体|;\<F9>|
+||:GoDebugStepOut 跳出函数体|;\<F10>|
+||结束debug模式| :GoDebugStop ;\<F6>|
+||运行当前go文件|:GoRun ;\<F4>|
 |symbols-outline插件|在右边显示文档结构|:SymbolsOutline|
 
 
@@ -98,6 +102,7 @@
 6. 需单独clone插件：
 	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
+7. python环境需要安装pip install neovim，可以在init.vim中指定虚拟环境路径
 
 报错解决：
 1. [centos7升级gcc 解决make时c99错误_Telda_W的博客-CSDN博客_makefile设置c99](https://blog.csdn.net/qq_23418145/article/details/121162908)
@@ -113,6 +118,8 @@
 6. 需单独clone插件：
 	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
+7. python环境需要安装pip install neovim，可以在init.vim中指定虚拟环境路径
+
 
 ## 效果展示
 ![](./img/example01.PNG)

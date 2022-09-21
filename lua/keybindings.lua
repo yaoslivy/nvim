@@ -52,14 +52,18 @@ map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opt)
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opt)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opt)
 
-
-
+-- vim-go
+map('n', '<leader><F5>', '<cmd>GoDebugStart<cr>', opt)
+map('n', '<leader><F6>', '<cmd>GoDebugStop<cr>', opt)
+map('n', '<leader><F9>', '<cmd>GoDebugStep<cr>', opt)
+map('n', '<leader><F10>', '<cmd>GoDebugStepOut<cr>', opt)
+map('n', '<leader><F4>', '<cmd>GoRun<cr>', opt)
 
 
 local pluginKeys = {}
 
 -- lsp 回调函数快捷键设置
-map("i", "gd", "<CR>]", opt)
+-- map("i", "gd", "<CR>]", opt)
 
 pluginKeys.maplsp = function(mapbuf)
   -- rename
@@ -67,7 +71,7 @@ pluginKeys.maplsp = function(mapbuf)
   -- code action
   mapbuf('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
   -- go xx
-  mapbuf('n', 'g]', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+  mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
   mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
   -- mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
   mapbuf('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)

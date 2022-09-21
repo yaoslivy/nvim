@@ -34,3 +34,8 @@ lua require('plugin-config/symbols-outline')
 " vim-go配置
 " debug日志输出 不输出debugger rpc信息
 let g:go_debug_log_output = ''
+
+
+
+" python虚拟环境设置 需要在虚拟环境中pip3 install neovim  jedi
+" let g:python3_host_prog = '/Users/yaoshuilin/miniforge3/envs/pytorch/bin/python3'

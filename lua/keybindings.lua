@@ -13,6 +13,9 @@ map("n", "<leader>d", "9j", opt) -- ;+u / +d 设置成移动 9 行
 map('v', '<', '<gv', opt)
 map('v', '>', '>gv', opt)
 
+-- normal 模式下粘贴yy的内容，而不是dd的内容
+map("n", '<leader>p', '"0p', opt)
+
 -- 分屏相关
 map("n", "<leader>s", ":vsp<CR>", opt) -- 水平分屏
 map("n", "<leader>v", ":sp<CR>", opt) -- 垂直分屏

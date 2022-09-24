@@ -37,6 +37,10 @@
 | |快速在匹配当前光标所在词并向上一个移动|#|
 | |快速在匹配当前光标所在词并向下一个移动|*|
 | |替换全文a为b /g不询问直接替换 /c询问选择替换 |:%s/a/b + enter :%s/a/b/g  :%s/a/b/c |
+| |格式化代码 |;+i |
+| |打开/ 折叠 |zc/ zo |
+| |打开、折叠当前括号对|za|
+| |打开/关闭所有折叠 |zR/ zM |
 |nvim-tree插件 |打开/关闭目录树 |;+n |
 | |打开或关闭文件夹，打开文件 |o |
 | |预览文件 |tab |
@@ -45,9 +49,6 @@
 | |显示/ 关闭隐藏文件 |H |
 |bufferline插件 |左/右切换tab |control+h/l |
 | |关闭左/右边全部tab |dl/dr|
-| nvim-treesitter|格式化代码 |;+i |
-| |打开/ 折叠 |zc/ zo |
-||打开、折叠当前括号对|za|
 | LSP系列插件|跳转到定义/返回 |gd / ctrl+o |
 ||跳转到继承处|gi|
 ||跳转到相关处|gr|
@@ -236,6 +237,19 @@
         }
     }" > go/conf.json
 
+    ```
+
+报错解决：
+1. error:Import "module" could not be resolved
+    1. lsp中pyright问题，解决方案：
+    - lsp.config.pyright.lua配置analysis.extraPaths路径，到项目目录
+    - 在每个项目目录下配置pyrightconfig.json文件
+    ```shell
+    echo "{
+        \"executionEnvironments\": [
+            {\"root\": \"src\"}
+        ]
+    }" > pyrightconfig.json
     ```
 
 

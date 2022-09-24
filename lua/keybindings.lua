@@ -62,6 +62,14 @@ map('n', '<leader><F9>', '<cmd>GoDebugStep<cr>', opt)
 map('n', '<leader><F10>', '<cmd>GoDebugStepOut<cr>', opt)
 map('n', '<leader><F4>', '<cmd>GoRun<cr>', opt)
 
+-- Vimspector
+map('n', '<leader><F6>', '<cmd>VimspectorReset<cr>', opt) -- 停止调试，恢复调试前的界面
+map('n', '<leader><F9>', '<Plug>VimspectorStepInto', opt)
+map('n', '<leader><F10>', '<Plug>VimspectorStepOut', opt)
+map('n', '<leader><F7>', '<Plug>VimspectorBreakpoints', opt)
+
+-- vimspector#ClearBreakpoints()
+
 
 local pluginKeys = {}
 

@@ -64,7 +64,7 @@
 | |搜索帮助命令 |;+fh |
 | toggleterm插件|启动/关闭第一个float term |control + \ |
 |        |启动/关闭第n个float term |  n + control + \ |
-| vim-go插件|启动go debug模式|:GoDebugStart  ;\<F5>|
+| vim-go插件|启动go debug模式|:GoDebugStart  ;<F5>|
 ||:GoDebugBreakpoint 光标所在行下断点| \<F9> |
 | |:GoDebugStep 逐行调试 | \<F10> |
 ||:GoDebugContinue 逐断点调试| \<F5> |
@@ -73,6 +73,13 @@
 ||结束debug模式| :GoDebugStop ;\<F6>|
 ||运行当前go文件|:GoRun ;\<F4>|
 |symbols-outline插件|在右边显示文档结构|:SymbolsOutline|
+|vimspector插件|启动调试|\<F5>|
+|   |停止调试|;\<F6>|
+|   |下断点|\<F9>|
+|   |下一步|\<F10>|
+|   |步入函数|;\<F9>|
+|   |跳出函数|;\<F10>|
+|   |列表显示所有断点 删除，禁用单个，禁用所有|;<F7> dd,t,T |
 
 
 ## 安装的插件:
@@ -102,36 +109,130 @@
 |kommentary|[click](https://github.com/b3nj5m1n/kommentary)
 |vim-go|[click](https://github.com/fatih/vim-go)
 |ripgrep|[click](https://github.com/BurntSushi/ripgrep#installation)|
+|vimspector|[click](https://github.com/puremourning/vimspector)|
 
 ## 快速配置
 ### CentOS7.6
 1. 安装neovim软件
-	1. [Release Nvim v0.7.2 · neovim/neovim · GitHub](https://github.com/neovim/neovim/releases/tag/v0.7.2)
+    1. [Release Nvim v0.7.2 · neovim/neovim · GitHub](https://github.com/neovim/neovim/releases/tag/v0.7.2)
 2. cd ~/.config
 3. git clone https://github.com/yaoslivy/nvim.git
 4. 安装 Packer.nvim 插件管理器
-	1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 5. 输入：nvim，然后输入:PackerSync完成插件下载
 6. 需单独clone插件：
-	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
+    1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
+    3. git clone https://github.com/puremourning/vimspector.git   ~/.local/share/nvim/site/pack/plugins/start/vimspector
 7. python环境需要安装pip install neovim，可以在init.vim中指定虚拟环境路径
+8. vimspector配置:
+    1. 安装语言adapter：:VimspectorInstall (debugpy/delve)
+    2. 设置.vimspector.json配置文件
+    ```shell
+    cd ~/.local/share/nvim/site/pack/plugins/start/vimspector/configurations/linux
+    mkdir python go
+    # 设置全局python debug配置文件
+    # 需要配置python执行器的全局环境变量PYROOT
+    echo "{
+        \"configurations\": {
+            \"debug cur python\": {
+                \"adapter\": \"debugpy\",
+                   \"filetypes\": [ \"python\" ],
+                    \"configuration\": {
+                        \"name\": \"debug python conf\",
+                        \"type\": \"python\",
+                        \"request\": \"launch\",
+                        \"cwd\": \"\${workspaceRoot}\",
+                        \"stopOnEntry\": true,
+                        \"console\": \"externalTerminal\",
+                        \"python\": \"\${PYROOT}/bin/python\", 
+                        \"program\": \"\${file}\"
+                    }
+            }
+        }
+    }" > python/conf.json
+
+    # 设置全局go debug配置文件
+    echo "{
+        \"configurations\": {
+                \"debug cur go\": {
+                    \"adapter\": \"delve\",
+                    \"filetypes\": [ \"go\" ],
+                    \"variables\": {
+                    },
+                    \"configuration\": {
+                        \"request\": \"launch\",
+                        \"program\": \"\${file}\",
+                        \"mode\": \"debug\"
+                    }
+                }
+        }
+    }" > go/conf.json
+
+    ```
+
 
 报错解决：
 1. [centos7升级gcc 解决make时c99错误_Telda_W的博客-CSDN博客_makefile设置c99](https://blog.csdn.net/qq_23418145/article/details/121162908)
 
 ### Mac
 1. 安装neovim软件：
-	1. brew install neovim
+    1. brew install neovim
 2. cd ~/.config
 3. git clone https://github.com/yaoslivy/nvim.git
 4. 安装 Packer.nvim 插件管理器：
-	1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 5. 输入：nvim，然后输入:PackerSync完成插件下载
 6. 需单独clone插件：
-	1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
+    1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
+    3. git clone https://github.com/puremourning/vimspector.git   ~/.local/share/nvim/site/pack/plugins/start/vimspector
 7. python环境需要安装pip install neovim，可以在init.vim中指定虚拟环境路径
+8. vimspector配置:
+    1. 安装语言adapter：:VimspectorInstall (debugpy/delve)
+    2. 设置.vimspector.json配置文件
+    ```shell
+    cd ~/.local/share/nvim/site/pack/plugins/start/vimspector/configurations/macos
+    mkdir python go
+    # 设置全局python debug配置文件
+    # 需要配置python执行器的全局环境变量PYROOT
+    echo "{
+        \"configurations\": {
+            \"debug cur python\": {
+                \"adapter\": \"debugpy\",
+                   \"filetypes\": [ \"python\" ],
+                    \"configuration\": {
+                        \"name\": \"debug python conf\",
+                        \"type\": \"python\",
+                        \"request\": \"launch\",
+                        \"cwd\": \"\${workspaceRoot}\",
+                        \"stopOnEntry\": true,
+                        \"console\": \"externalTerminal\",
+                        \"python\": \"\${PYROOT}/bin/python\", 
+                        \"program\": \"\${file}\"
+                    }
+            }
+        }
+    }" > python/conf.json
+
+    # 设置全局go debug配置文件
+    echo "{
+        \"configurations\": {
+                \"debug cur go\": {
+                    \"adapter\": \"delve\",
+                    \"filetypes\": [ \"go\" ],
+                    \"variables\": {
+                    },
+                    \"configuration\": {
+                        \"request\": \"launch\",
+                        \"program\": \"\${file}\",
+                        \"mode\": \"debug\"
+                    }
+                }
+        }
+    }" > go/conf.json
+
+    ```
 
 
 ## 效果展示

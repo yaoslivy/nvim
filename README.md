@@ -251,7 +251,21 @@
         ]
     }" > pyrightconfig.json
     ```
-
+2. error:Vetur error with finding tsconfig.json or jsconfig.json
+    1. 项目目录下配置tsconfig.json
+    ```shell
+    echo "
+    {
+    \"compilerOptions\": {
+        \"target\": \"esnext\",
+        \"module\": \"esnext\",
+        \"strict\": true,
+        \"jsx\": \"preserve\",
+        \"moduleResolution\": \"node\"
+        }
+    }
+    " > tsconfig.json
+    ```
 
 ## 效果展示
 ![](./img/example01.PNG)

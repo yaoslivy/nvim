@@ -37,8 +37,9 @@ let g:go_debug_log_output = ''
 
 
 
-" python虚拟环境设置 需要在虚拟环境中pip3 install neovim  jedi
-" let g:python3_host_prog = '/Users/yaoshuilin/miniforge3/envs/pytorch/bin/python3'
+" python虚拟环境设置 需要在虚拟环境中安装:python3 -m pip install --user --upgrade pynvim，
+let g:python3_host_prog = '/data/dataDeploy/miniconda3/envs/pytorch/bin/python3'
+
 
 " vimspector配置
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'

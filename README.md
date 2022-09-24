@@ -124,7 +124,7 @@
     1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
     3. git clone https://github.com/puremourning/vimspector.git   ~/.local/share/nvim/site/pack/plugins/start/vimspector
-7. python环境需要安装pip install neovim，可以在init.vim中指定虚拟环境路径
+7. python环境需要安装python3 -m pip install --user --upgrade pynvim，可以在init.vim中指定虚拟环境路径
 8. vimspector配置:
     1. 安装语言adapter：:VimspectorInstall (debugpy/delve)
     2. 设置.vimspector.json配置文件
@@ -174,6 +174,10 @@
 
 报错解决：
 1. [centos7升级gcc 解决make时c99错误_Telda_W的博客-CSDN博客_makefile设置c99](https://blog.csdn.net/qq_23418145/article/details/121162908)
+2. vimspector need python3:
+    1. 在init.vim修改python3_host_prog配置
+
+
 
 ### Mac
 1. 安装neovim软件：

@@ -15,7 +15,7 @@ set clipboard+=unnamedplus
 set ts=4
 
 
-" 皮肤设置
+" 主题设置
 set background=dark
 colorscheme monokai
 
@@ -38,8 +38,13 @@ let g:go_debug_log_output = ''
 
 
 " python虚拟环境设置 需要在虚拟环境中安装:python3 -m pip install --user --upgrade pynvim，
-let g:python3_host_prog = '/data/dataDeploy/miniconda3/envs/pytorch/bin/python3'
+let g:python3_host_prog = '/Users/yaoshuilin/miniforge3/envs/pytorch/bin/python3'
+
 
 
 " vimspector配置
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+
+" 折叠配置 缩进折叠方法
+set foldmethod=indent

@@ -45,7 +45,7 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("n", "dl", ":BufferLineCloseLeft<CR>", opt)
 map("n", "dr", ":BufferLineCloseRight<CR>", opt)
 
--- nvim-treesitter 代码格式化
+-- 代码格式化
 map("n", "<leader>i", "gg=G", opt)
 
 

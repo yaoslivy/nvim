@@ -43,10 +43,13 @@
 | |打开/关闭所有折叠 |zR/ zM |
 |nvim-tree插件 |打开/关闭目录树 |;+n |
 | |打开或关闭文件夹，打开文件 |o |
-| |预览文件 |tab |
+| |复制文件名|y |
+| |复制文件相对打开根相对路径; 复制文件绝对路径|Y; gy|
+| |光标定位到当前文件的父级别目录, 定位到当前文件的同级目录的最后一项 | P, J |
 | |创建文件/重命名文件 |a/ r |
 | |拷贝/ 剪切/ 粘贴/ 删除 |c/ x/ p/ d |
 | |显示/ 关闭隐藏文件 |H |
+| |使用系统默认应用打开所选文件 |s |
 |bufferline插件 |左/右切换tab |control+h/l |
 | |关闭左/右边全部tab |dl/dr|
 | LSP系列插件|跳转到定义/返回 |gd / ctrl+o |
@@ -113,6 +116,14 @@
 |vimspector|[click](https://github.com/puremourning/vimspector)|
 
 ## 快速配置
+1. 配置lua环境（CentOS默认安装了lua5.1）
+    - mac : brew install lua
+    - ubuntu : sudo apt-get install lua5.1
+2. 配置node环境：[install](http://nodejs.cn/download/)
+3. 配置go环境：[install](https://golang.google.cn/dl/)
+
+
+
 ### CentOS7.6
 1. 安装neovim软件
     1. [Release Nvim v0.7.2 · neovim/neovim · GitHub](https://github.com/neovim/neovim/releases/tag/v0.7.2)
@@ -125,7 +136,7 @@
     1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
     3. git clone https://github.com/puremourning/vimspector.git   ~/.local/share/nvim/site/pack/plugins/start/vimspector
-7. python环境需要安装python3 -m pip install --user --upgrade pynvim，可以在init.vim中指定虚拟环境路径
+7. python环境需要安装python3 -m pip install --user --upgrade pynvim，lsp安装的pyright编辑时解析的是当前终端进入nvim的python虚拟环境
 8. vimspector配置:
     1. 安装语言adapter：:VimspectorInstall (debugpy/delve)
     2. 设置.vimspector.json配置文件
@@ -192,7 +203,7 @@
     1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
     3. git clone https://github.com/puremourning/vimspector.git   ~/.local/share/nvim/site/pack/plugins/start/vimspector
-7. python环境需要安装pip install neovim，可以在init.vim中指定虚拟环境路径
+7. python环境需要安装pip install neovim，lsp安装的pyright编辑时解析的是当前终端进入nvim的python虚拟环境
 8. vimspector配置:
     1. 安装语言adapter：:VimspectorInstall (debugpy/delve)
     2. 设置.vimspector.json配置文件

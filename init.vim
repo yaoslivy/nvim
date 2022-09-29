@@ -38,7 +38,7 @@ let g:go_debug_log_output = ''
 
 
 " python虚拟环境设置 需要在虚拟环境中安装:python3 -m pip install --user --upgrade pynvim，
-let g:python3_host_prog = '/Users/yaoshuilin/miniforge3/envs/pytorch/bin/python3'
+let g:python3_host_prog = '$PYROOT/bin/python3'
 
 
 

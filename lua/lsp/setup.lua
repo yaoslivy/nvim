@@ -9,13 +9,6 @@ local servers = {
     gopls = require "lsp.config.go",
     vuels = require "lsp.config.vue",
     pyright = require("lsp.config.pyright"),
-    html = require("lsp.config.html"),
-    cssls = require("lsp.config.css"),
-    emmet_ls = require("lsp.config.emmet"),
-    tsserver = require("lsp.config.ts"),
-    jsonls = require("lsp.config.json"),
-    bashls = require("lsp.config.bash"),
-
 }
 
 -- 自动安装 LanguageServers

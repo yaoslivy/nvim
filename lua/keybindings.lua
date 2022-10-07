@@ -30,7 +30,6 @@ map("n", "<leader>o", "<C-w>o", opt) -- close others 关闭其他分屏 (o = oth
 -- map("n", "sk", ":resize -10<CR>",opt)
 
 -- 使用 ; + hjkl 在窗口之间跳转 上下左右
--- 水平分屏很常用，比如 svgd 命令相当于 打开右侧窗口进入方法的定义，看完可以随手 sc 关闭掉。
 map("n", "<leader>h", "<C-w>h", opt)
 map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
@@ -109,7 +108,8 @@ pluginKeys.cmp = function(cmp)
     -- 上一个
     ['<C-k>'] = cmp.mapping.select_prev_item(),
     -- 下一个
-    ['<C-j>'] = cmp.mapping.select_next_item(),
+    --['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
     -- 出现补全
     ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- 取消
@@ -122,11 +122,12 @@ pluginKeys.cmp = function(cmp)
     -- Set `select` to `false` to only confirm explicitly selected items.
    ['<CR>'] = cmp.mapping.confirm({
      select = true ,
-      behavior = cmp.ConfirmBehavior.Replace
-    }),
+     --behavior = cmp.ConfirmBehavior.Replace,
+     behavior = cmp.ConfirmBehavior.Insert
+    },{"i", "c"}),
     -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+   -- ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+   -- ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
   }
 end
 

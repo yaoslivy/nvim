@@ -56,10 +56,10 @@ map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opt)
 
 -- vim-go
 map('n', '<leader><F5>', '<cmd>GoDebugStart<cr>', opt)
-map('n', '<leader><F6>', '<cmd>GoDebugStop<cr>', opt)
+map('n', '<leader><F4>', '<cmd>GoDebugStop<cr>', opt)
 map('n', '<leader><F9>', '<cmd>GoDebugStep<cr>', opt)
 map('n', '<leader><F10>', '<cmd>GoDebugStepOut<cr>', opt)
-map('n', '<leader><F4>', '<cmd>GoRun<cr>', opt)
+map('n', '<F4>', '<cmd>GoRun<cr>', opt)
 
 -- Vimspector
 map('n', '<leader><F6>', '<cmd>VimspectorReset<cr>', opt) -- 停止调试，恢复调试前的界面

@@ -74,8 +74,8 @@
 ||:GoDebugContinue 逐断点调试| \<F5> |
 ||:GoDebugStep 跳入函数体|;\<F9>|
 ||:GoDebugStepOut 跳出函数体|;\<F10>|
-||结束debug模式| :GoDebugStop ;\<F6>|
-||运行当前go文件|:GoRun ;\<F4>|
+||结束debug模式| :GoDebugStop ;\<F4>|
+||运行当前go文件|:GoRun \<F4>|
 |symbols-outline插件|在右边显示文档结构|:SymbolsOutline|
 |vimspector插件|启动调试|\<F5>|
 |   |停止调试|;\<F6>|
@@ -115,24 +115,33 @@
 
 
 
-### CentOS7.6
+### CentOS/Ubuntu/Mac
 1. 安装neovim软件
     1. [Release Nvim v0.7.2 · neovim/neovim · GitHub](https://github.com/neovim/neovim/releases/tag/v0.7.2)
 2. mkdir -p ~/.config && cd ~/.config
 3. git clone https://github.com/yaoslivy/nvim.git
-4. 安装 Packer.nvim 插件管理器
-    1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-5. 输入：nvim，然后输入:PackerInstall完成插件下载
-6. 需单独clone插件：
+4. 安装插件
+    1. 方式一：直接下载备份好的文件: 
+        1. mkdir -p  ~/.local/share/nvim/site/pack && cd ~/.local/share/nvim/site/pack
+        2. wget https://github.com/yaoslivy/nvim/releases/download/v0.1/packer.tar.gz
+        3. tar -xzvf packer.tar.gz
+    2. 方式二：逐个Install: 
+        1. 安装 Packer.nvim 插件管理器 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+        2. 输入：nvim，然后输入:PackerInstall完成插件下载
+5. 需单独clone插件：
     1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
     3. git clone https://github.com/puremourning/vimspector.git   ~/.local/share/nvim/site/pack/plugins/start/vimspector
-7. python环境需要安装python3 -m pip install --user --upgrade pynvim，lsp安装的pyright编辑时解析的是当前终端进入nvim的python虚拟环境
-8. vimspector配置:
-    1. 安装语言adapter：:VimspectorInstall (debugpy/delve)
+6. python环境需要安装python3 -m pip install --user --upgrade pynvim，lsp安装的pyright编辑时解析的是当前终端进入nvim的python虚拟环境
+7. vimspector配置:
+    1. 安装语言adapter：:VimspectorInstall debugpy delve
     2. 设置.vimspector.json配置文件
     ```shell
+    # linux
     cd ~/.local/share/nvim/site/pack/plugins/start/vimspector/configurations/linux
+    # mac
+    cd ~/.local/share/nvim/site/pack/plugins/start/vimspector/configurations/macos
+    
     mkdir python go
     # 设置全局python debug配置文件
     # 需要配置python执行器的全局环境变量PYROOT
@@ -179,70 +188,7 @@
 1. [centos7升级gcc 解决make时c99错误_Telda_W的博客-CSDN博客_makefile设置c99](https://blog.csdn.net/qq_23418145/article/details/121162908)
 2. vimspector need python3:
     1. 在init.vim修改python3_host_prog配置
-
-
-
-### Mac
-1. 安装neovim软件：
-    1. brew install neovim
-2. mkdir -p ~/.config && cd ~/.config
-3. git clone https://github.com/yaoslivy/nvim.git
-4. 安装 Packer.nvim 插件管理器：
-    1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-5. 输入：nvim，然后输入:PackerInstall完成插件下载
-6. 需单独clone插件：
-    1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
-    2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
-    3. git clone https://github.com/puremourning/vimspector.git   ~/.local/share/nvim/site/pack/plugins/start/vimspector
-7. python环境需要安装pip install neovim，lsp安装的pyright编辑时解析的是当前终端进入nvim的python虚拟环境
-8. vimspector配置:
-    1. 安装语言adapter：:VimspectorInstall (debugpy/delve)
-    2. 设置.vimspector.json配置文件
-    ```shell
-    cd ~/.local/share/nvim/site/pack/plugins/start/vimspector/configurations/macos
-    mkdir python go
-    # 设置全局python debug配置文件
-    # 需要配置python执行器的全局环境变量PYROOT
-    echo "{
-        \"configurations\": {
-            \"debug cur python\": {
-                \"adapter\": \"debugpy\",
-                   \"filetypes\": [ \"python\" ],
-                    \"configuration\": {
-                        \"name\": \"debug python conf\",
-                        \"type\": \"python\",
-                        \"request\": \"launch\",
-                        \"cwd\": \"\${workspaceRoot}\",
-                        \"stopOnEntry\": true,
-                        \"console\": \"externalTerminal\",
-                        \"python\": \"\${PYROOT}/bin/python\", 
-                        \"program\": \"\${file}\"
-                    }
-            }
-        }
-    }" > python/conf.json
-
-    # 设置全局go debug配置文件
-    echo "{
-        \"configurations\": {
-                \"debug cur go\": {
-                    \"adapter\": \"delve\",
-                    \"filetypes\": [ \"go\" ],
-                    \"variables\": {
-                    },
-                    \"configuration\": {
-                        \"request\": \"launch\",
-                        \"program\": \"\${file}\",
-                        \"mode\": \"debug\"
-                    }
-                }
-        }
-    }" > go/conf.json
-
-    ```
-
-报错解决：
-1. error:Import "module" could not be resolved
+3. error:Import "module" could not be resolved
     1. lsp中pyright问题，解决方案：
     - lsp.config.pyright.lua配置analysis.extraPaths路径，到项目目录
     - 在每个项目目录下配置pyrightconfig.json文件
@@ -253,7 +199,7 @@
         ]
     }" > pyrightconfig.json
     ```
-2. error:Vetur error with finding tsconfig.json or jsconfig.json
+4. error:Vetur error with finding tsconfig.json or jsconfig.json
     1. 项目目录下配置tsconfig.json
     ```shell
     echo "
@@ -268,6 +214,8 @@
     }
     " > tsconfig.json
     ```
+5. error: symbols-outline.nvim/lua/symbols-outline/preview.lua:21: Expected Lua number
+    1. 当前symbols-outline版本的包有问题，删除重新安装
 
 ## 效果展示
 ![](./img/example01.PNG)

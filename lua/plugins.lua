@@ -48,8 +48,6 @@ packer.startup({
             -- or                            , branch = '0.1.x',
             requires = { {'nvim-lua/plenary.nvim'} }
         }
-        -- 快速注释
-        use 'b3nj5m1n/kommentary'
 
         -- lsp
         use {
@@ -81,6 +79,20 @@ packer.startup({
     })
     -- 大纲栏显示
     use "simrat39/symbols-outline.nvim"
+    -- 缩进线
+    use "lukas-reineke/indent-blankline.nvim"
+    -- Todo 高亮 
+    use "folke/todo-comments.nvim"
+    -- 显示trouble
+    use "folke/trouble.nvim"
+    -- git操作 
+    use 'lewis6991/gitsigns.nvim'
+    -- 注释操作
+    use 'numToStr/Comment.nvim'
+    -- color highlighter 
+    use 'norcalli/nvim-colorizer.lua'
+    -- 交互式垂直滚动条
+    use 'dstein64/nvim-scrollview'
 end,
 config = {
     -- 锁定插件版本在snapshots目录

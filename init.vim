@@ -12,9 +12,9 @@ colorscheme monokai
 " 插件配置
 " 目录树
 lua require('plugin-config/nvim-tree')
-" 下方状态栏
+" 状态栏
 lua require('plugin-config/lualine')
-" 打开文件tab栏
+" 管理tabs
 lua require('plugin-config/bufferline')
 
 " 高亮显示
@@ -32,6 +32,22 @@ lua require('lsp/nvim-cmp')
 lua require('plugin-config/nvim-autopairs')
 " 大纲显示
 lua require('plugin-config/symbols-outline')
+
+" 缩进线
+lua require('plugin-config/indent_blankline')
+" TODO高亮
+lua require('plugin-config/todo-comments')
+" 显示trouble
+lua require('plugin-config/trouble')
+" gitsigns
+lua require('plugin-config/gitsigns')
+" Comment 
+lua require('plugin-config/Comment')
+" colorizer
+lua require('plugin-config/colorizer')
+" scrollview
+lua require('plugin-config/scrollview')
+
 
 
 " 使用系统剪切板

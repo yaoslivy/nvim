@@ -67,7 +67,16 @@ map('n', '<leader><F9>', '<Plug>VimspectorStepInto', opt)
 map('n', '<leader><F10>', '<Plug>VimspectorStepOut', opt)
 map('n', '<leader><F7>', '<Plug>VimspectorBreakpoints', opt)
 
--- vimspector#ClearBreakpoints()
+-- Trouble
+map('n', '<leader>xx', '<cmd>TroubleToggle<cr>', opt)
+
+-- todo-comment
+map('n', '<leader>tt', '<cmd>TodoTelescope<cr>', opt)
+
+-- gitsigns
+map('n', 'hp', '<cmd>Gitsigns prev_hunk<cr>', opt)
+map('n', 'hn', '<cmd>Gitsigns next_hunk<cr>', opt)
+map('n', 'hv', '<cmd>Gitsigns preview_hunk<CR>', opt)
 
 
 local pluginKeys = {}
@@ -108,7 +117,7 @@ pluginKeys.cmp = function(cmp)
     -- 上一个
     ['<C-k>'] = cmp.mapping.select_prev_item(),
     -- 下一个
-    --['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
     ['<Tab>'] = cmp.mapping.select_next_item(),
     -- 出现补全
     ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),

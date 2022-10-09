@@ -86,8 +86,8 @@
 |todo-comments|使用Telescope显示当前项目中所有todo-comments |;tt / :TodoTelescope |
 |trouble|列出/关闭当前项目中存在的trouble|;xx / :TroubleToggle|
 |gitsigns|重置当前文件和commit一致|:Gitsigns reset_buffer|
-|   |定位上/下一个修改区域|hp/ hn|
-|   |预览当前区域的修改内容|hv|
+|   |定位上/下一个修改区域|;gi/ ;gj|
+|   |预览当前区域的修改内容|;gv|
 |Comment|行/快注释|gcc/gcb|
 |   |在当前行上方/下方/末尾添加注释|gcp/gcu/gca|
 

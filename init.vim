@@ -8,7 +8,6 @@ lua require('keybindings')
 set background=dark
 colorscheme monokai
 
-
 " 插件配置
 " 目录树
 lua require('plugin-config/nvim-tree')

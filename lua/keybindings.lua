@@ -76,6 +76,10 @@ map('n', ';gj', '<cmd>Gitsigns prev_hunk<cr>', opt)
 map('n', ';gk', '<cmd>Gitsigns next_hunk<cr>', opt)
 map('n', ';gv', '<cmd>Gitsigns preview_hunk<CR>', opt)
 
+-- spellsitter
+map('n', '<leader>sp', '<cmd>set spell<cr>', opt)
+map('n', '<leader>nsp', '<cmd>set nospell<cr>', opt)
+
 
 local pluginKeys = {}
 

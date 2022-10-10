@@ -46,7 +46,8 @@ lua require('plugin-config/Comment')
 lua require('plugin-config/colorizer')
 " scrollview
 lua require('plugin-config/scrollview')
-
+" 拼写检查
+lua require('plugin-config/spellsitter')
 
 
 " 使用系统剪切板
@@ -63,3 +64,4 @@ let g:python3_host_prog = '$PYROOT/bin/python3'
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 " 折叠配置 缩进折叠方法
 set foldmethod=indent
+

@@ -93,6 +93,8 @@ packer.startup({
     use 'norcalli/nvim-colorizer.lua'
     -- 交互式垂直滚动条
     use 'dstein64/nvim-scrollview'
+    -- 拼写检查 nvim0.8.0已经并入
+    use 'lewis6991/spellsitter.nvim'
 end,
 config = {
     -- 锁定插件版本在snapshots目录

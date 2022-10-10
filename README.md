@@ -90,6 +90,7 @@
 |   |预览当前区域的修改内容|;gv|
 |Comment|行/快注释|gcc/gcb|
 |   |在当前行上方/下方/末尾添加注释|gcp/gcu/gca|
+|spellsitter|开启/关闭拼写检查|\sp, \nsp|
 
 
 
@@ -118,6 +119,7 @@
 |注释插件|Comment.nvim|[click](https://github.com/numToStr/Comment.nvim)|
 |实时颜色显示|nvim-colorizer.lua|[click](https://github.com/norcalli/nvim-colorizer.lua)|
 |scrollview|nvim-scrollview|[click](https://github.com/dstein64/nvim-scrollview)|
+|spell检查|spellsitter.nvim|[click](https://github.com/lewis6991/spellsitter.nvim)|
 
 
 ## 快速配置

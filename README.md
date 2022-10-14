@@ -89,7 +89,7 @@
 |   |定位上/下一个修改区域|;gi/ ;gj|
 |   |预览当前区域的修改内容|;gv|
 |Comment|行/快注释|gcc/gcb|
-|   |在当前行上方/下方/末尾添加注释|gcp/gcu/gca|
+|   |在当前行上方/下方/末尾添加注释|gcu/gcd/gca|
 |spellsitter|开启/关闭拼写检查|\sp, \nsp|
 
 

@@ -232,6 +232,21 @@
     ```
 5. error: symbols-outline.nvim/lua/symbols-outline/preview.lua:21: Expected Lua number
     1. 当前symbols-outline版本的包有问题，删除重新安装
+6. ssh远程如何复制vim中的文本
+    1. 本地需要一个支持 OSC 52 的终端，mac下iterm2中General->Selection->勾选 Applications in terminal may access clipboard
+    2. chmod +x ./config/nvim/clipboard-provider
+    3. 写入环境变量:
+        ```shell
+        tee -a $HOME/.zshrc <<'EOF'
+        # Nvim-config envs
+        export NVIMPATH=$HOME/.config/nvim/
+        export PATH=$NVIMPATH:$PATH 
+        EOF
+
+        source ~/.zshrc
+        ```
+    4. 重启nvim，之后在VISUAL模式下就可以直接使用y复制ssh远端的内容到本地系统剪切板中了
+
 
 ## 效果展示
 ![](./img/example01.PNG)

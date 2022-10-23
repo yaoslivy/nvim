@@ -64,4 +64,19 @@ let g:python3_host_prog = '$PYROOT/bin/python3'
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 " 折叠配置 缩进折叠方法
 set foldmethod=indent
+"ssh 远程粘贴板
+if executable('clipboard-provider')
+    let g:clipboard = {
+          \ 'name': 'myClipboard',
+          \     'copy': {
+          \         '+': 'clipboard-provider copy',
+          \         '*': 'env COPY_PROVIDERS=tmux clipboard-provider copy',
+          \     },
+          \     'paste': {
+          \         '+': 'clipboard-provider paste',
+          \         '*': 'env COPY_PROVIDERS=tmux clipboard-provider paste',
+          \     },
+          \ }
+endif
+
 

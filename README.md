@@ -234,7 +234,7 @@
     1. 当前symbols-outline版本的包有问题，删除重新安装
 6. ssh远程如何复制vim中的文本
     1. 本地需要一个支持 OSC 52 的终端，mac下iterm2中General->Selection->勾选 Applications in terminal may access clipboard
-    2. chmod +x ./config/nvim/clipboard-provider
+    2. chmod +x ~/.config/nvim/clipboard-provider
     3. 写入环境变量:
         ```shell
         tee -a $HOME/.zshrc <<'EOF'

@@ -8,9 +8,13 @@
 #exec 2>> ~/clipboard-provider.out
 #set -x
 
-: ${COPY_PROVIDERS:=tmux pb xclip osc52 local}
-: ${PASTE_PROVIDERS:=xclip pb tmux local}
+# : ${COPY_PROVIDERS:=tmux pb xclip osc52 local}
+# : ${PASTE_PROVIDERS:=xclip pb tmux local}
+# : ${TTY:=`(tty || tty </proc/$PPID/fd/0) 2>/dev/null | grep /dev/`}
+: ${COPY_PROVIDERS:=pb xclip osc52 local}
+: ${PASTE_PROVIDERS:=xclip pb local}
 : ${TTY:=`(tty || tty </proc/$PPID/fd/0) 2>/dev/null | grep /dev/`}
+
 
 LOCAL_STORAGE=$HOME/.clipboard-provider.out
 
@@ -37,13 +41,13 @@ is-copy() {
     if [[ "$1" == "copy" ]]; then return 0; else return 1; fi
 }
 
-tmux-provider() {
-    [[ -n $TMUX ]] || return is-copy
-    case $1 in
-        copy) internal | tmux load-buffer - ;;
-        paste) tmux save-buffer - ;;
-    esac
-}
+# tmux-provider() {
+#     [[ -n $TMUX ]] || return is-copy
+#     case $1 in
+#         copy) internal | tmux load-buffer - ;;
+#         paste) tmux save-buffer - ;;
+#     esac
+# }
 
 pb-provider() {
     if ! command -v pbcopy &>/dev/null;then return $(is-copy $1); fi

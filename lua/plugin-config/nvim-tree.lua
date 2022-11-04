@@ -29,8 +29,7 @@ nvim_tree.setup({
         dotfiles = true,
         -- 隐藏的文件夹
         custom = {
-            "node_modules",
-            "__pycache__",
+            "node_modules"
         },
     },
     view = {

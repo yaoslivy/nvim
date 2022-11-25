@@ -75,6 +75,8 @@
 |   |:GoDebugStepOut 跳出函数体|;\<F10>|
 |   |结束debug模式| :GoDebugStop \;\<F4>|
 |   |运行当前go文件|:GoRun \ \<F4>|
+|   |给当前位置的结构体增加Tags|:GoAddTags |
+|   |给当前位置的结构体去除Tags|:GoRemoveTags |
 |symbols-outline|显示/关闭文档结构|:SymbolsOutline|
 |vimspector|启动调试|\<F5>|
 |   |停止调试|;\<F6>|

@@ -138,14 +138,14 @@
     1. [Release Nvim v0.7.2 · neovim/neovim · GitHub](https://github.com/neovim/neovim/releases/tag/v0.7.2)
 2. mkdir -p ~/.config && cd ~/.config
 3. git clone https://github.com/yaoslivy/nvim.git
-4. 安装插件
+4. 安装插件  
+    安装 Packer.nvim 插件管理器: git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     1. 方式一：直接下载备份好的文件: 
         1. mkdir -p  ~/.local/share/nvim/site/pack && cd ~/.local/share/nvim/site/pack
         2. wget https://github.com/yaoslivy/nvim/releases/download/v0.1/packer.tar.gz
         3. tar -xzvf packer.tar.gz
     2. 方式二：逐个Install: 
-        1. 安装 Packer.nvim 插件管理器 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-        2. 输入：nvim，然后输入:PackerInstall完成插件下载
+        1. 输入：nvim，然后输入:PackerInstall完成插件下载
 5. 需单独clone插件：
     1. git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/site/pack/plugins/start/vim-go
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)

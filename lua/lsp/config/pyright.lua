@@ -7,6 +7,7 @@ return {
         python = {
             analysis = {
                 -- extraPaths = {"/Volumes/Files/ysl/Python/git/paper"}
+                typeCheckingMode = "off" 
             }
         }
     }

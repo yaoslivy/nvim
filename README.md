@@ -80,13 +80,13 @@ Translate the Chinese in the following table into English:
 2. Run `mkdir -p ~/.config && cd ~/.config`.
 3. Clone the configuration files from https://github.com/yaoslivy/nvim.git using `git clone https://github.com/yaoslivy/nvim.git`.
 4. Run `nvim` in the terminal. Please wait for the related plugins to finish installing.
-5. The ChatGPT plugin requires a global variable named OPENAI_API_KEY to be set with an API key value. The key can be obtained from https://platform.openai.com/account/api-keys.
-6. Clone the following plugins separately:
-    1. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
-    2. `git clone https://github.com/fatih/vim-go.git ~/.local/share/nvim/lazy/vim-go/`
-    3. `git clone https://github.com/puremourning/vimspector.git ~/.local/share/nvim/lazy/vimspector/`
-7. Install the pynvim Python package using `python3 -m pip install --user --upgrade pynvim`.
-8. Configure vimspector:
+5. Type "mason" in the command line mode and press Enter to install the required LSP language environment. [mason](https://github.com/williamboman/mason.nvim)
+6. The ChatGPT plugin requires a global variable named OPENAI_API_KEY to be set with an API key value. [Get url](https://platform.openai.com/account/api-keys.)
+7. Install separately:
+    1. nerd-font: install [url](https://github.com/ryanoasis/nerd-fonts)
+    2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
+8. Install the pynvim Python package using `python3 -m pip install --user --upgrade pynvim`.
+9. Configure vimspector:
     1. Install the language adapters by running `:VimspectorInstall debugpy delve`.
     2. Set up the `vimspector.json` configuration file by following the instructions below:
 

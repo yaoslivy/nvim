@@ -141,10 +141,10 @@ echo "{
     3. And, add it to the environment variables.
     ```shell
     tee -a $HOME/.zshrc <<'EOF'
-        # Nvim-config envs
-        export NVIMPATH=$HOME/.config/nvim/
-        export PATH=$NVIMPATH:$PATH 
-        EOF
+    # Nvim-config envs
+    export NVIMPATH=$HOME/.config/nvim/
+    export PATH=$NVIMPATH:$PATH 
+    EOF
 
     source ~/.zshrc
     ```

@@ -135,7 +135,20 @@ echo "{
     }
 }" > go/conf.json
 ```
+10. How to copy text in vim during SSH remote session.
+    1. You need a terminal that supports OSC 52 locally. For iTerm2 on Mac, go to General -> Selection -> check "Applications in terminal may access clipboard". 
+    2. Then, execute "chmod +x ~/.config/nvim/clipboard-provider".
+    3. And, add it to the environment variables.
+    ```shell
+    tee -a $HOME/.zshrc <<'EOF'
+        # Nvim-config envs
+        export NVIMPATH=$HOME/.config/nvim/
+        export PATH=$NVIMPATH:$PATH 
+        EOF
 
+        source ~/.zshrc
+    ```
+    4. After restarting nvim, you can use the "y" command in VISUAL mode to copy the content from the SSH remote to the local system clipboard.
 
 
 ![demo01](https://github.com/yaoslivy/link-files/blob/main/nvim/demo01.png?raw=true)

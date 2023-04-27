@@ -87,7 +87,7 @@ Translate the Chinese in the following table into English:
     2. ripgrep: [install url](https://github.com/BurntSushi/ripgrep#installation)
 8. Install the pynvim Python package using `python3 -m pip install --user --upgrade pynvim`.
 9. Configure vimspector:
-    1. Install the language adapters by running `:VimspectorInstall debugpy delve`.
+    1. Install the language adapters by running `:VimspectorInstall debugpy delve` (It needs to be run in an python environment where pynvim is installed.).
     2. Set up the `vimspector.json` configuration file by following the instructions below:
 
 ```shell

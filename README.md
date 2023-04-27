@@ -146,7 +146,7 @@ echo "{
         export PATH=$NVIMPATH:$PATH 
         EOF
 
-        source ~/.zshrc
+    source ~/.zshrc
     ```
     4. After restarting nvim, you can use the "y" command in VISUAL mode to copy the content from the SSH remote to the local system clipboard.
 

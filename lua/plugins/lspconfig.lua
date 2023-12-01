@@ -3,7 +3,7 @@ return {
   dependencies = {
     "jose-elias-alvarez/typescript.nvim",
     init = function()
-      require("lazyvim.util").on_attach(function(_, buffer)
+      require("lazyvim.util").lsp.on_attach(function(_, buffer)
         vim.keymap.set("n", "<leader>co", "typescriptorganizeimports", { buffer = buffer, desc = "organize imports" })
         vim.keymap.set("n", "<leader>cr", "typescriptrenamefile", { desc = "rename file", buffer = buffer })
         vim.keymap.set("n", ";rn", vim.lsp.buf.rename, { desc = "rename file", buffer = buffer })

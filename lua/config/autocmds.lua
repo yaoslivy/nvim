@@ -3,3 +3,4 @@
 -- Add any additional autocmds here
 
 vim.cmd("set nofoldenable")
+vim.cmd("set noswapfile")
